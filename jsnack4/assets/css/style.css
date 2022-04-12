@@ -11,3 +11,11 @@ h1{
 .wrapper{
   height: 100vh;
 }
+
+.green{
+  color: lawngreen;
+}
+
+.red{
+  color: firebrick;
+}

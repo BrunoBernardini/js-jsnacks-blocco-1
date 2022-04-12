@@ -1,24 +1,56 @@
 /*
-  JSnack 2
-  L’utente inserisce due parole in successione, con due prompt.
-  Il software stampa prima la parola più corta, poi la parola più lunga.
+  JSnack 4
+  In un array sono contenuti i nomi degli invitati alla festa del grande Gatsby,
+  chiedi all’utente il suo nome e comunicagli se può partecipare o no alla festa.
 */
 
-const firstWord = prompt("Inserisci la prima parola");
-const secWord = prompt("Inserisci la seconda parola");
+const invited = ["Domenico Agostino",
+"Mihai Badia",
+"Riccardo Becattini",
+"Manuel Benini",
+"Bruno Bernardini",
+"Guido Buono",
+"Pierluigi Cancellaro",
+"Francesco Cataletto",
+"Stefano Cravotta",
+"Giovanni Crispino",
+"Giancarlo Croce",
+"Enrico De Stefano",
+"Silvia Dugato",
+"Carlo Duminuco Del Monte",
+"Francesco Ercoli",
+"Luca Gaddini",
+"Marco Gagliano",
+"Cristina Gasperini",
+"Gabriele Giusti",
+"Chiara Grillo",
+"Manuela Ienuso",
+"Michele Iliescu",
+"Ketevan Jorjoliani",
+"Renato Lami",
+"Davide Manciucca",
+"Emanuele Mastronardi",
+"Luca Mazzarini",
+"Daniele Monteleone",
+"Salvatore Olivieri",
+"Leonardo Pellegrini",
+"Agostino Piquè",
+"Davide Pizzolla",
+"Antonio Pollo",
+"Ivan Russo",
+"Amanjit Singh",
+"Sebastiano Visco"
+];
 
 const output = document.querySelector(".wrapper");
+const nameSurname = prompt("Inserisci nome e cognome:")
 
-let biggerWord, smallerWord;
+let found = false, result = `<span class="red">Mi dispiace, non rientri nella lista degli invitati!</span>`;
 
-if(firstWord.length >= secWord.length){
-  biggerWord = firstWord;
-  smallerWord = secWord;
-}
-else{
-  biggerWord = secWord;
-  smallerWord = firstWord;
+for(let i=0; i<invited.length; i++){
+  if(nameSurname === invited[i]) found = true;
 }
 
-output.innerHTML = `<h2>Parole inserite:</h2>
-                    <h1><span class="first-word">${biggerWord}</span> - <span class="second-word">${smallerWord}</span></h1>`;
+if(found) result = `<span class="green">Sei nella lista degli invitati alla festa del grande Gatsby, benvenuto!</span>`;
+
+output.innerHTML = `<h1>${result}</h1>`;
