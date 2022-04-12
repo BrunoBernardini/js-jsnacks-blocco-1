@@ -5,11 +5,20 @@
 
 const firstNum = parseInt(prompt("Inserisci il primo numero"));
 const secNum = parseInt(prompt("Inserisci il secondo numero"));
-const output = document.querySelector(".content");
+
+const output = document.querySelector(".wrapper");
+
+let biggerNum = secNum, result = "Il numero più grande che hai inserito &egrave;:";
 
 if(firstNum > secNum){
-  output.innerHTML = firstNum;
+  biggerNum = firstNum;
+}
+else if(firstNum < secNum){
+  biggerNum = secNum;
 }
 else{
-  output.innerHTML = secNum;
+  result = "Hai inserito due numeri uguali:";
 }
+
+output.innerHTML = `<h2>${result}</h2>
+                    <h1>${biggerNum}</h1>`;
