@@ -1,24 +1,19 @@
 /*
-  JSnack 2
-  L’utente inserisce due parole in successione, con due prompt.
-  Il software stampa prima la parola più corta, poi la parola più lunga.
+  JSnack 3
+  Il software deve chiedere per 5 volte all’utente di inserire un numero.
+  Il programma stampa la somma di tutti i numeri inseriti.
+  Esegui questo programma in due versioni, con il for e con il while (facoltativo) 
 */
 
-const firstWord = prompt("Inserisci la prima parola");
-const secWord = prompt("Inserisci la seconda parola");
-
 const output = document.querySelector(".wrapper");
+const limit = 5;
 
-let biggerWord, smallerWord;
+let somma = 0;
 
-if(firstWord.length >= secWord.length){
-  biggerWord = firstWord;
-  smallerWord = secWord;
-}
-else{
-  biggerWord = secWord;
-  smallerWord = firstWord;
+for(let i=0; i<limit; i++){
+  const input = parseInt(prompt(`Inserisci il ${i+1}° numero:`));
+  somma += input;
 }
 
-output.innerHTML = `<h2>Parole inserite:</h2>
-                    <h1><span class="first-word">${biggerWord}</span> - <span class="second-word">${smallerWord}</span></h1>`;
+output.innerHTML = `<h2>Risultato della somma:</h2>
+                    <h1>${somma}</h1>`;
