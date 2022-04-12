@@ -1,11 +1,21 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+body{
+  background-color: cadetblue;
+  color: white;
 }
 
-.clearfix::after{
-  content: '';
-  display: table;
-  clear: both;
+h1{
+  font-weight: bolder;
+  font-size: 100px;
+}
+
+.wrapper{
+  height: 100vh;
+}
+
+.first-word{
+  color: green;
+}
+
+.second-word{
+  color: goldenrod;
 }
