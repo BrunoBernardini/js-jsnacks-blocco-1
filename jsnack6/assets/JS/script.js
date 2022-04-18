@@ -1,24 +1,16 @@
 /*
-  JSnack 2
-  L’utente inserisce due parole in successione, con due prompt.
-  Il software stampa prima la parola più corta, poi la parola più lunga.
+  JSnack 6
+  Stampa il cubo dei primi N numeri, dove N è un numero indicato dall’utente.
 */
 
-const firstWord = prompt("Inserisci la prima parola");
-const secWord = prompt("Inserisci la seconda parola");
-
+const number = parseInt(prompt("Inserisci il numero da processare:"));
 const output = document.querySelector(".wrapper");
 
-let biggerWord, smallerWord;
+let result = `<h1>Il cubo dei primi ${number} numeri:</h1>
+              <ul>`;
 
-if(firstWord.length >= secWord.length){
-  biggerWord = firstWord;
-  smallerWord = secWord;
-}
-else{
-  biggerWord = secWord;
-  smallerWord = firstWord;
+for(let i=1; i<=number; i++){
+  result += `<li>${i}&#179; = ${i*i*i}</li>`;
 }
 
-output.innerHTML = `<h2>Parole inserite:</h2>
-                    <h1><span class="first-word">${biggerWord}</span> - <span class="second-word">${smallerWord}</span></h1>`;
+output.innerHTML = result + "</ul>";
