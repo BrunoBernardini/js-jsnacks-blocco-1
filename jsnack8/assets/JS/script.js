@@ -1,24 +1,22 @@
 /*
-  JSnack 2
-  L’utente inserisce due parole in successione, con due prompt.
-  Il software stampa prima la parola più corta, poi la parola più lunga.
+  JSnack 8
+  Chiedi un numero di 4 cifre all’utente e calcola la somma di tutte le cifre che compongono il numero.
+  
+  In questo caso possiamo sfruttare a nostro vantaggio il fatto che la funzione ù prompt restituisca una stringa anche se si è digitato un numero e recuperare una cifra alla volta usanto il ciclo for per scorrere la stringa numerica
 */
 
-const firstWord = prompt("Inserisci la prima parola");
-const secWord = prompt("Inserisci la seconda parola");
-
 const output = document.querySelector(".wrapper");
+let number, sum = 0;
 
-let biggerWord, smallerWord;
-
-if(firstWord.length >= secWord.length){
-  biggerWord = firstWord;
-  smallerWord = secWord;
+do{
+  number = prompt("Inserisci un numero a 4 cifre");
 }
-else{
-  biggerWord = secWord;
-  smallerWord = firstWord;
+while((number.length !== 4)||(isNaN(number)))
+
+for(let i=0; i<number.length; i++){
+  sum += parseInt(number.charAt(i));
 }
 
-output.innerHTML = `<h2>Parole inserite:</h2>
-                    <h1><span class="first-word">${biggerWord}</span> - <span class="second-word">${smallerWord}</span></h1>`;
+output.innerHTML = `<h1>La somma di tutte le cifre di ${number} è ${sum}.</h1>`;
+
+
