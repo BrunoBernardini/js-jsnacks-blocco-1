@@ -1,24 +1,19 @@
 /*
-  JSnack 2
-  L’utente inserisce due parole in successione, con due prompt.
-  Il software stampa prima la parola più corta, poi la parola più lunga.
+  JSnack 9
+  Calcola la somma e la media dei primi 10 numeri.
 */
 
-const firstWord = prompt("Inserisci la prima parola");
-const secWord = prompt("Inserisci la seconda parola");
-
 const output = document.querySelector(".wrapper");
+const limit = 10;
 
-let biggerWord, smallerWord;
+let sum = 0;
+let content = `<h1>La somma e la media dei primi ${limit} numeri:</h1>
+              <ul>`;
 
-if(firstWord.length >= secWord.length){
-  biggerWord = firstWord;
-  smallerWord = secWord;
+for(let i=1; i<=limit; i++){
+  sum += i;
 }
-else{
-  biggerWord = secWord;
-  smallerWord = firstWord;
-}
-
-output.innerHTML = `<h2>Parole inserite:</h2>
-                    <h1><span class="first-word">${biggerWord}</span> - <span class="second-word">${smallerWord}</span></h1>`;
+content += `<li>${sum}</li>
+            <li>${sum/limit}</li>
+           <ul>`;
+output.innerHTML = content;
